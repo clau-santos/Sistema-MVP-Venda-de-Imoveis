@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Lista de Imóveis</h2>
+
+  <table class="table" style="width:px;">
+    <tr style="text-align: center;">
+      <th>ID do imóvel</th>
+      <th>Tipo de Imóvel</th>
+      <th>Endereço</th>
+      <th>Complemento</th>
+      <th>CEP</th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th>Proprietario</th>
+      <th>Data de aquisição do imóvel</th>
+    </tr>
+    <tr style="text-align: center;" *ngFor="let imovel of imoveis">
+      <td>{{ imovel.id }}</td>
+        <td>{{ imovel.tipo_imovel}}</td>
+        <td>{{ imovel.endereco }}</td>
+        <td>{{ imovel.complemento }}</td>
+        <td>{{ imovel.cep }}</td>
+        <td>{{ imovel.cidade }}</td>
+        <td>{{ imovel.estado }}</td>
+        <td>{{ imovel.id_pessoa }}</td>
+        <td>{{ imovel.adquirido_em | date: 'dd/MM/yyyy' }}</td>
+        <td>
+          <input type="hidden" #id_imovel name="id_imovel" id="id_imovel" value="{{imovel.id_imovel}}">
+        </td>
+        <td><button class="btn btn-primary" [routerLink]="['/alteraimovel']" [queryParams]="{id:imovel.id_imovel}">Alterar</button></td>
+        <td><button class="btn btn-primary">Excluir</button></td>
+    </tr>
+  </table>
+  <br>
+  <button class="btn btn-primary" routerLink="/imoveladicionar">Novo Imóvel</button>  &nbsp;|&nbsp;
+  <input class="btn btn-primary"  type="button" routerLink="/pessoas" value="Lista de Pessoas">
+  <br>
+
+</body>
+</html>
+
+
+
+<br>
+Pesquisa: <input type="text" id="pesquisa" name="pesquisa" #pesquisa (keyup)="0" >
+<br>
+{{pesquisa.value}}
+<br>
+

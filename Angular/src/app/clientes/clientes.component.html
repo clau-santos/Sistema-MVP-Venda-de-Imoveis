@@ -1,0 +1,40 @@
+<h1>Lista de Clientes</h1>
+
+<br>
+Pesquisa: <input type="text" id="pesquisa" name="pesquisa" #pesquisa (keyup)="0" >
+<br>
+{{pesquisa.value}}
+<br>
+<table class="table" style="width: px;">
+  <tr style="text-align: center;">
+    <th>Cliente</th>
+    <th>Endereço</th>
+    <th>Complemento</th>
+    <th>CEP</th>
+    <th>Cidade</th>
+    <th>Estado</th>
+    <th>Banco</th>
+  </tr>
+  <tr style="text-align: center;" *ngFor="let cliente of clientes">
+    <td>{{ cliente.id_pessoa }} </td>
+    <td>{{ cliente.endereco }}</td>
+    <td>{{ cliente.complemento }}</td>
+    <td>{{ cliente.cep }}</td>
+    <td>{{ cliente.cidade }}</td>
+    <td>{{ cliente.estado }}</td>
+    <td>{{ cliente.id_banco }}</td>
+    <td>
+      <input type="hidden" #id_cliente name="id_cliente" id="id_cliente" value="{{cliente.id_cliente}}" />
+
+    </td>
+    <td>
+      <button class="btn btn-primary" [routerLink]="['/clienteseditar']" [queryParams]="{id:cliente.id_cliente}">Alterar</button>
+    </td>
+    <td>
+      <button class="btn btn-primary" title="Excluir">Excluir</button></td>
+  </tr>
+</table>
+<br>
+<button class="btn btn-primary" routerLink="/clientesadicionar">Adicionar Cliente</button> &nbsp;|&nbsp;
+<input class="btn btn-primary"  type="button" routerLink="/imovel" value="Lista de Imóveis">
+<br>

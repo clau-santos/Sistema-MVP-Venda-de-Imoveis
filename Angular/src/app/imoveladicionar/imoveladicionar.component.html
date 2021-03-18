@@ -1,0 +1,77 @@
+<div>
+  <h1 id="titulo">Cadastro de Imóveis</h1>
+  <p>Preencha as informações abaixo</p>
+
+  <br>
+</div>
+
+<div>
+   <br>
+   <label class="form" >Tipo de imóvel </label><br>
+   <select #tipo_imovel id="tipo_imovel" name="tipo_imovel" required>
+     <option selected disabled value="">Selecione</option>
+     <option>Apartamento</option>
+     <option>Casa</option>
+     <option>Kitnet</option>
+   </select><br><br>
+
+    <label>Endereço</label>
+    <input #endereco name="endereco" type="text" id="endereco" name="endereco" required/> <br><br>
+
+    <label>Complemento</label>
+    <input #complemento type="text" id="complemento" name="complemento"/> <br><br>
+
+    <label>CEP</label>
+    <input #cep type="text" id="cep" name="cep" required/> <br><br>
+
+    <label>Cidade</label>
+    <input #cidade type="text" id="cidade" name="cidade" required/> <br><br>
+
+    <label>Estado</label>
+    <select #estado id="estado" name="estado" required>
+      <option selected disabled value="">Selecione</option>
+      <option value="AC">Acre</option>
+      <option value="AL">Alagoas</option>
+      <option value="AP">Amapá</option>
+      <option value="AM">Amazonas</option>
+      <option value="BA">Bahia</option>
+      <option value="CE">Ceará</option>
+      <option value="DF">Distrito Federal</option>
+      <option value="ES">Espírito Santo</option>
+      <option value="GO">Goiás</option>
+      <option value="MA">Maranhão</option>
+      <option value="MT">Mato Grosso</option>
+      <option value="MS">Mato Grosso do Sul</option>
+      <option value="MG">Minas Gerais</option>
+      <option value="PA">Pará</option>
+      <option value="PB">Paraíba</option>
+      <option value="PR">Paraná</option>
+      <option value="PE">Pernambuco</option>
+      <option value="PI">Piauí</option>
+      <option value="RJ">Rio de Janeiro</option>
+      <option value="RN">Rio Grande do Norte</option>
+      <option value="RS">Rio Grande do Sul</option>
+      <option value="RO">Rondônia</option>
+      <option value="RR">Roraima</option>
+      <option value="SC">Santa Catarina</option>
+      <option value="SP">São Paulo</option>
+      <option value="SE">Sergipe</option>
+      <option value="TO">Tocantins</option>
+    </select><br><br>
+
+    <label>Proprietario</label>
+    <input #id_pessoa type="number" id="id_pessoa" name="id_pessoa" required/> <br><br>
+
+    <label>Data de aquisição do imóvel</label>
+    <input #adquirido_em type="date" id="adquirido_em" name="adquirido_em" required/> <br><br>
+
+
+</div>
+
+<br><br>
+
+<div >
+  <input class="btn btn-primary" type="submit" (click)="insereNovoImovel(tipo_imovel.value, endereco.value, complemento.value, cep.value, cidade.value, estado.value, id_pessoa.value, adquirido_em.value)" value="Inserir "> &nbsp;|&nbsp; <input class="btn btn-primary"  type="button" routerLink="/imovel" value="Voltar">
+</div>
+
+

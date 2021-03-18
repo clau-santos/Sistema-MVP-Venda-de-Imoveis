@@ -1,0 +1,8 @@
+flask 
+flask-sqlalchemy
+flask-restplus
+flask-cors
+sqlalchemy
+psycopg2
+Werkzeug==0.16.0
+

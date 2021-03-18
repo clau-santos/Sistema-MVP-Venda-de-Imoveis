@@ -1,0 +1,32 @@
+<h2>Alterar Pessoa</h2>
+<div>
+    <br>
+    <label><strong>Nome: </strong></label>
+    <input  value="{{pessoa.nome}}" type="text"><br><br>
+    <label><strong>Data Nascimento: </strong></label>
+    <input value="{{ pessoa.data_nascimento | date: 'dd/MM/yyyy' }}" name="datanascimento" type="date" id="data_nascimento" name="data_nascimento"><br><br>
+    <label><strong>CPF: </strong></label>
+    <input value="{{ pessoa.cpf }}" type="text" id="cpf" name="cpf">
+    <label><strong>RG: </strong></label>
+    <input value="{{ pessoa.rg }}" type="text" id="rg" name="rg">
+    <label><strong>Telefone: </strong></label>
+    <input value="{{ pessoa.telefone }}" type="text" id="telefone" name="telefone">
+
+    <label><strong>Estado Civil: </strong></label>
+        <select class value="{{ pessoa.estado_civil }}" id="estado_civil" name="estado_civil">
+          <option selected disabled value="">Selecione</option>
+          <option>Casado(a)</option>
+          <option>Divorciado(a)</option>
+          <option>Solteiro(a)</option>
+          <option>Viúvo(a)</option>
+        </select>
+    <label><strong>Profissão</strong></label>
+    <input value={{ pessoa.profissao }} type="text" id="profissao" name="profissao">
+        <input type="hidden" #id_pessoa name="id_pessoa" id="id_pessoa" value="{{pessoa.id_pessoa}}">
+</div>
+
+<div style="width: 125px;">
+  <input type="button" value="Salvar"> &nbsp;|&nbsp; <input type="button" routerLink="/pessoas" value="Voltar">
+</div>
+
+<br>

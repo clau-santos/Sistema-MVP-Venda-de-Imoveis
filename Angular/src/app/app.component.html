@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+  <div class="navbar navbar-expand-lg navbar-dark bg-dark"  >
+    <a class="navbar-brand" routerLink="/menu" routerLinkActive="activate">Home</a>
+    <div >
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/imovel" routerLinkActive="activate">Imóveis</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/pessoas" routerLinkActive="activate">Cadastros</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/clientes" routerLinkActive="activate">Clientes</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/despesas" routerLinkActive="activate">Despesas</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+
+</body>
+</html>
+
+
+

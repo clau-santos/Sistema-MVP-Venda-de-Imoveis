@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Despesas</title>
+</head>
+<body>
+  <h2> Cadastro de Despesas </h2>
+  <form>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Imóvel</label><br>
+      <div class="col-sm-10">
+        <input #id_imovel type="number" class="form-control" id="id_imovel" placeholder="Id_imovel">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Despesa com energia </label>
+      <div class="col-sm-10">
+        <input #energia type="number" class="form-control" id="energia" placeholder="Energia">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Despesa com água </label>
+      <div class="col-sm-10">
+        <input #agua type="number" class="form-control" id="agua" placeholder="Água">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Despesa com condomínio </label>
+      <div class="col-sm-10">
+        <input #condominio type="number" class="form-control" id="condominio" placeholder="Condomínio">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label  class="col-sm-5 col-form-label">Despesa com propaganda </label>
+      <div class="col-sm-10">
+        <input #propaganda type="number" class="form-control" id="propaganda" placeholder="Propaganda">
+      </div>
+    </div>
+    <br>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <input class="btn btn-primary" type="submit" (click)="insereNovaDespesa(id_imovel.value, energia.value, agua.value, condominio.value, propaganda.value)" value="Inserir"> &nbsp;|&nbsp; <input class="btn btn-primary"  type="button" routerLink="/despesas" value="Voltar">
+      </div>
+    </div>
+
+  </form>
+</body>
+</html>
+

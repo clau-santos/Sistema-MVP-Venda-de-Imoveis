@@ -1,0 +1,38 @@
+<h2>Lista de Pessoas</h2>
+
+
+<br>
+Pesquisa: <input type="text" id="pesquisa" name="pesquisa" #pesquisa (keyup)="0" >
+<br>
+{{pesquisa.value}}
+<br>
+<table class="table" style="width:px;">
+  <tr style="text-align: center;">
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Data de Nascimento</th>
+    <th>CPF</th>
+    <th>RG</th>
+    <th>Telefone</th>
+    <th>Estado Civil</th>
+    <th>Profissão</th>
+  </tr>
+  <tr *ngFor="let pessoa of pessoas">
+    <td>{{ pessoa.id }}</td>
+    <td>{{ pessoa.nome}}</td>
+    <td>{{ pessoa.data_nascimento | date: 'dd/MM/yyyy'}}</td>
+    <td>{{ pessoa.cpf }}</td>
+    <td>{{ pessoa.rg }}</td>
+    <td>{{ pessoa.telefone }}</td>
+    <td>{{ pessoa.estado_civil }}</td>
+    <td>{{ pessoa.profissao }}</td>
+    <td>
+      <input type="hidden" #id_pessoa  name="id_pessoa" id="id_pessoa" value="{{pessoa.id_pessoa}}" />
+    </td>
+    <td><button class="btn btn-primary" [routerLink]="['/pessoaseditar']" [queryParams]="{id:pessoa.id_pessoa}">Alterar</button></td>
+    <td><input class="btn btn-primary" type="submit" (click)="deletePeople(id_pessoa.value)" value="Deletar"></td>
+
+  </tr>
+  <button class="btn btn-primary" routerLink="/pessoasadicionar">Adicionar Pessoa</button>
+</table>
+

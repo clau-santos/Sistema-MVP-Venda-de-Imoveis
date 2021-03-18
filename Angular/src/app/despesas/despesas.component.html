@@ -1,0 +1,33 @@
+<h2>Lista de Despesas</h2>
+
+
+<br>
+Pesquisa: <input type="text" id="pesquisa" name="pesquisa" #pesquisa (keyup)="0" >
+<br>
+{{pesquisa.value}}
+<br>
+<table class="table" style="width:px;">
+  <tr >
+    <th>Imóvel</th>
+    <th>Despesa com energia</th>
+    <th>Despesa com água</th>
+    <th>Despesa com condomínio</th>
+    <th>Despesa com propaganda</th>
+  </tr>
+  <tr  *ngFor="let despesa of despesas">
+      <td>{{ despesa.id_imovel}}</td>
+      <td>R${{ despesa.energia }}</td>
+      <td>R${{ despesa.agua }}</td>
+      <td>R${{ despesa.condominio }}</td>
+      <td>R${{ despesa.propaganda }}</td>
+      <td>
+        <input type="hidden" #id_despesa name="id_despesa" id="id_despesa" value="{{despesa.id_despesa}}">
+      </td>
+      <td><button class="btn btn-primary" [routerLink]="['/alteradespesa']" [queryParams]="{id:despesa.id_despesa}">Alterar</button></td>
+      <td><button class="btn btn-primary">Excluir</button></td>
+  </tr>
+</table>
+<br>
+<button class="btn btn-primary" routerLink="/despesasadicionar">Adicionar Despesa</button>  &nbsp;|&nbsp;
+<input class="btn btn-primary"  type="button" routerLink="/pessoas" value="Lista de Pessoas">
+<br>
