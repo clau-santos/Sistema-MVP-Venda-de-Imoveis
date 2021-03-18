@@ -4,7 +4,7 @@
 
 
 
-<img src="exemplo-image.png" alt="exemplo imagem">
+<img src="fluxo.jpg" alt="exemplo imagem">
 
 > API (Application Programming Interface/Interface de Programação de Aplicações), trata-se de um conjunto de rotinas e padrões estabelecidos e documentados por uma aplicação, para que outras aplicações consigam utilizar suas funcionalidades. 
 > Toda a comunicação dessa interface é feita via web através de métodos. 
